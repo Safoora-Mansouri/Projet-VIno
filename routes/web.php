@@ -15,7 +15,8 @@
 use App\Http\Livewire\AddCellar;
 use App\Http\Livewire\AddBottle;
 use App\Http\Controllers\CustomAuthController;
-
+use App\Http\Livewire\BottleAdvancedForm;
+use App\Http\Livewire\SearchAdvancedResults;
 
 use App\Http\Livewire\UpdateBottle;
 
@@ -47,14 +48,16 @@ Route::get('/', function () {
 //Route::get('bottles',ManyBottles::class);
 Route::get('/bottles/{bottle_id}', SingleBottle::class);
 Route::get('/cellars', ManyCellars::class)->name('cellars');
-
+Route::get('/bottle', BottleAdvancedForm::class)->name('bottle-advanced-form');
+Route::get('/search', SearchAdvancedResults::class)->name('search-advanced-results');
 /////////////////////// Fin Farzad ///////
 
 
 
 /////////////////////// Camille ///////
 
-Route::get('formAddBottle', AddBottle::class);
+Route::get('add-bottle', AddBottle::class)->name('add-bottle');
+Route::get('wishlist', AddBottle::class)->name('wishlist');
 /////////////////////// Fin Camille ///////
 
 
